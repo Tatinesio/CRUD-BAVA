@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-widt, initial-scale=1.0, shrink-to-fit=no">
+        <title>CRUD ALUMNOS</title>
+        <link rel="stylesheet" href="https://bootswatch.com/4/solar/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">TRABAJO FINAL</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor02">
+      <ul  class="navbar-nav mr-auto">
+        <li>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Consultas
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="/consulta1">Listar alumnos que viven en Batan</a>
+                    <a class="dropdown-item" href="/consulta2">Listar alumnos que nacieron en el 2002</a>
+                    <a class="dropdown-item" href="/consulta3">Listar alumnos que viven en Batan y son RH-</a>
+                    <a class="dropdown-item" href="/consulta4">Listar alumnos por DNI ascendente</a>
+                    <a class="dropdown-item" href="/consulta5">Listar alumnos que viven en Av. J.B. Justo.</a>
+                </div>   
+              </div>
+          </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">      
+    <div class="row mt-3">
+      <div class="row mt-2">
+        <div class="">
+            <table class="table table-bordered table-hover">
+              <thead >
+                <th style="vertical-align: middle; text-align: center;">Nº</th>
+                <th style="vertical-align: middle; text-align: center;">Numero legajo</th>
+                <th style="vertical-align: middle; text-align: center;">Nombre y apellido</th>
+                <th style="vertical-align: middle; text-align: center;">Domicilio</th>
+                <th style="vertical-align: middle; text-align: center;">Codigo Postal</th>
+                <th style="vertical-align: middle; text-align: center;">Fecha de nacimiento</th>
+                <th style="vertical-align: middle; text-align: center;">Email</th>
+                <th style="vertical-align: middle; text-align: center;">Grupo sanguineo</th>
+                <th style="vertical-align: middle; text-align: center;">Telefono fijo</th>
+                <th style="vertical-align: middle; text-align: center;">Telefono movil</th>
+                <th style="vertical-align: middle; text-align: center;">DNI</th>
+              </thead>
+              <tbody>
+                <% if (data) {%>
+                  <% for (var i=0; i<data.length; i++){%>
+                    <tr>
+                      <td><%=(i+1)%></td>
+                      <td><%=data[i].leg_alumno%></td>
+                      <td><%=data[i].apyn_alumno%></td>
+                      <td><%=data[i].dom_alumno%></td>
+                      <td><%=data[i].cod_postal%></td>
+                      <td><%=data[i].fecha_nac_alumno.getDate()+"/"+(data[i].fecha_nac_alumno.getMonth()+1)+"/"+data[i].fecha_nac_alumno.getFullYear()%></td>
+                      <td><%=data[i].email_alumno%></td>
+                      <td><%=data[i].grupo_sang_alumno%></td>
+                      <td><%=data[i].tel_fijo_alumno%></td>
+                      <td><%=data[i].tel_movil_alumno%></td>
+                      <td><%=data[i].dni_alumno%></td>
+                    </tr>
+                  <% } %>
+              <% } %>     
+              </tbody>
+
+            </table>
+      </div>
+    </div>
+  </div>
+
+</body>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</html>
