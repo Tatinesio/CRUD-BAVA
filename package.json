@@ -15,7 +15,8 @@
     "express-myconnection": "^1.0.4",
     "morgan": "^1.10.0",
     "mysql": "^2.18.1",
-    "npm-git-install": "^0.3.0"
+    "npm-git-install": "^0.3.0",
+    "start":"node src/app.js"
   },
   "devDependencies": {
     "nodemon": "^2.0.7",
