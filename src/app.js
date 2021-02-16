@@ -20,11 +20,11 @@ app.set('views', path.join(__dirname, 'views'));
 // middlewares
 app.use(morgan('dev'));
 app.use(myConnection(mysql,{
-    host:'sql10.freemysqlhosting.net',
-    user:'sql10392781',
-    password:'pxaRDxI7aW',
+    host:'remotemysql.com',
+    user:'omwwcByagO',
+    password:'U9Wo0BerGU',
     port:3306,
-    database: 'sql10392781'
+    database: 'omwwcByagO'
 
 }, 'single'));
 app.use(express.urlencoded({extended:false}));
