@@ -27,13 +27,10 @@ controller.add=(req, res) =>{
 controller.save= (req, res) =>{
     const data = req.body;
 
-    console.log(data.cod_postal);
-
     const leg_alumno = parseInt(data.leg_alumno);
     const dni_alumno = parseInt(data.dni_alumno);
 
     var fecha =  new Date(data.fecha_nac_alumno);
-
     data.leg_alumno=leg_alumno;
     data.dni_alumno=dni_alumno;
     data.fecha_nac_alumno = fecha;
@@ -44,7 +41,7 @@ controller.save= (req, res) =>{
             res.json(err);
         }
         res.redirect('/');
-    });
+        });
     });
 }; 
 
