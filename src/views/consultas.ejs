@@ -3,83 +3,90 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-widt, initial-scale=1.0, shrink-to-fit=no">
-        <title>CRUD ALUMNOS</title>
-        <link rel="stylesheet" href="https://bootswatch.com/4/solar/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <title>Viven en Batán</title>
+        <link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     </head>
-    <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="/">TRABAJO FINAL</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarColor02">
-      <ul  class="navbar-nav mr-auto">
-        <li>
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Consultas
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="/consulta1">Listar alumnos que viven en Batan</a>
-                    <a class="dropdown-item" href="/consulta2">Listar alumnos que nacieron en el 2002</a>
-                    <a class="dropdown-item" href="/consulta3">Listar alumnos que viven en Batan y son RH-</a>
-                    <a class="dropdown-item" href="/consulta4">Listar alumnos por DNI ascendente</a>
-                    <a class="dropdown-item" href="/consulta5">Listar alumnos que viven en Av. J.B. Justo.</a>
-                </div>   
-              </div>
-          </li>
-      </ul>
-    </div>
-  </nav>
-
-  <div class="container">      
-    <div class="row mt-3">
-      <div class="row mt-2">
-        <div class="">
-            <table class="table table-bordered table-hover">
-              <thead >
-                <th style="vertical-align: middle; text-align: center;">Nº</th>
-                <th style="vertical-align: middle; text-align: center;">Numero legajo</th>
-                <th style="vertical-align: middle; text-align: center;">Nombre y apellido</th>
-                <th style="vertical-align: middle; text-align: center;">Domicilio</th>
-                <th style="vertical-align: middle; text-align: center;">Codigo Postal</th>
-                <th style="vertical-align: middle; text-align: center;">Fecha de nacimiento</th>
-                <th style="vertical-align: middle; text-align: center;">Email</th>
-                <th style="vertical-align: middle; text-align: center;">Grupo sanguineo</th>
-                <th style="vertical-align: middle; text-align: center;">Telefono fijo</th>
-                <th style="vertical-align: middle; text-align: center;">Telefono movil</th>
-                <th style="vertical-align: middle; text-align: center;">DNI</th>
-              </thead>
-              <tbody>
-                <% if (data) {%>
-                  <% for (var i=0; i<data.length; i++){%>
-                    <tr>
-                      <td><%=(i+1)%></td>
-                      <td><%=data[i].leg_alumno%></td>
-                      <td><%=data[i].apyn_alumno%></td>
-                      <td><%=data[i].dom_alumno%></td>
-                      <td><%=data[i].cod_postal%></td>
-                      <td><%=data[i].fecha_nac_alumno.getDate()+"/"+(data[i].fecha_nac_alumno.getMonth()+1)+"/"+data[i].fecha_nac_alumno.getFullYear()%></td>
-                      <td><%=data[i].email_alumno%></td>
-                      <td><%=data[i].grupo_sang_alumno%></td>
-                      <td><%=data[i].tel_fijo_alumno%></td>
-                      <td><%=data[i].tel_movil_alumno%></td>
-                      <td><%=data[i].dni_alumno%></td>
-                    </tr>
-                  <% } %>
-              <% } %>     
-              </tbody>
-
-            </table>
-      </div>
-    </div>
-  </div>
-
-</body>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <body> 
+    <nav class="navbar navbar-expand-lg navbar-dark bg-warning" style="box-shadow: 0px 2px 3px 1px #866737">
+       <a class="navbar-brand" href="/">Trabajo Practico Final (CRUD)</a>
+       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+       </button>
+       <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+             <li class="nav-item"> </li>
+             <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              	  Consultas
+                </a>
+                	<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                			<a class="dropdown-item" href="/consulta1">Listar todos los Alumnos que viven en la ciudad de Batán</a>
+				        	<a class="dropdown-item" href="/consulta2">Listar todos los Alumnos que nacieron en el año 2002</a>
+					        <a class="dropdown-item" href="/consulta3">Listar todos los Alumnos que viven en la ciudad de Batán y tengan grupo sanguíneo RH-</a>
+           	  	  			<a class="dropdown-item" href="/consulta4">Listar todos los Alumnos ordenados por DNI Ascendente</a>
+					        <a class="dropdown-item" href="/consulta5">Listar todos los Alumnos que viven en la calle Av. J.B. Justo</a>
+               		 </div>
+             </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+			</form>
+       </div>
+    </nav>
+		<h1 class="col-xl-7">&nbsp;</h1>
+		<h1 class="col-xl-7">&nbsp;</h1>
+        <div class="card offset-xl-2"  style="background-color: rgba(126, 126, 126, 0.801);box-shadow: 0px 2px 3px 1px #757575; width: 80rem;">
+			<div class="card-body">
+          		<h6 class="display-8 col-xl-7">&nbsp;</h6>
+		 		<h3 class="col-xl-12">Alumnos que viven en la ciudad de Batán:</h3>
+				<div class="container">
+  					<div class="row">
+    					<div class="">
+              					<div class="">
+                  					<table class="table table-striped table-dark" style="box-shadow: 0px 2px 3px 1px #15151a">
+                   			 		  <thead >
+                      					<th style="vertical-align: middle; text-align: center;">ID</th>
+                      					<th style="vertical-align: middle; text-align: center;">Numero legajo</th>
+                      					<th style="vertical-align: middle; text-align: center;">Nombre y apellido</th>
+                      					<th style="vertical-align: middle; text-align: center;">Domicilio</th>
+                      					<th style="vertical-align: middle; text-align: center;">Codigo Postal</th>
+                      					<th style="vertical-align: middle; text-align: center;">Fecha de nacimiento</th>
+                      					<th style="vertical-align: middle; text-align: center;">Email</th>
+                      					<th style="vertical-align: middle; text-align: center;">Grupo sanguineo</th>
+                      					<th style="vertical-align: middle; text-align: center;">Telefono fijo</th>
+                      					<th style="vertical-align: middle; text-align: center;">Telefono movil</th>
+                      					<th style="vertical-align: middle; text-align: center;">DNI</th>
+                   					 </thead>
+                    				<tbody>
+                     		 		<% if (data) {%>
+                        				<% for (var i=0; i<data.length; i++){%>
+                          					<tr>      
+                            					<td><%=(i+1)%></td>
+                            					<td><%=data[i].leg_alumno%></td>
+                            					<td><%=data[i].apyn_alumno%></td>
+                            					<td><%=data[i].dom_alumno%></td>
+                            					<td><%=data[i].cod_postal%></td>
+                            					<td><%=data[i].fecha_nac_alumno.getDate()+"/"+(data[i].fecha_nac_alumno.getMonth()+1)+"/"+data[i].fecha_nac_alumno.getFullYear()%></td>
+                            					<td><%=data[i].email_alumno%></td>
+                            					<td><%=data[i].grupo_sang_alumno%></td>
+                            					<td><%=data[i].tel_fijo_alumno%></td>
+                            					<td><%=data[i].tel_movil_alumno%></td>
+                            					<td><%=data[i].dni_alumno%></td>
+                           				 		
+                          				  </tr>
+                        			<% } %>
+                    			<% } %>     
+                    			</tbody>
+                  		</table>
+            		</div>
+          		</div>
+			</div>
+    		</div>
+  		</div>
+      <h6 class=" col-xl-7">&nbsp;</h6>
+</div>       
+    </body>
+    
 </html>

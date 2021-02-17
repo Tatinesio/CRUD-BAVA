@@ -11,15 +11,12 @@ controller.list = (req, res) => {
             });
         });
     });
-
 };
-
 controller.add=(req, res) =>{
     req.getConnection((err,conn)=>{
         if(err){
             res.json(err);
         }
-        
             res.render('alumno_add');
     });
 }
@@ -36,29 +33,14 @@ controller.save= (req, res) =>{
     data.fecha_nac_alumno = fecha;
 
     req.getConnection((err, conn) => {
-    conn.query('INSERT INTO alumnos SET ?', [data], (err, customer) => {
+    conn.query('INSERT INTO alumnos set ?', [data], (err, customer) => {
         if(err){
             res.json(err);
         }
-        res.redirect('/');
-        });
-    });
-}; 
-
-controller.delete=(req, res) =>{
-    const {leg_alumno} = req.params;
-
-    req.getConnection((err, conn) => {
-        if(err){
-            res.json(err);
-        }
-
-        conn.query('DELETE FROM alumnos WHERE leg_alumno = ?',[leg_alumno], (err, rows) =>{
             res.redirect('/');
         });
     });
-};
-
+}; 
 controller.edit = (req, res) => {
 
     const {leg_alumno} = req.params;
@@ -94,7 +76,19 @@ controller.update = (req, res) =>{
         });
     });
 };
+controller.delete=(req, res) =>{
+    const {leg_alumno} = req.params;
 
+    req.getConnection((err, conn) => {
+        if(err){
+            res.json(err);
+        }
+
+        conn.query('DELETE FROM alumnos WHERE leg_alumno = ?',[leg_alumno], (err, rows) =>{
+            res.redirect('/');
+        });
+    });
+};
 controller.consulta1 = (req, res) => {
     req.getConnection((err,conn)=>{
         
@@ -117,7 +111,7 @@ controller.consulta2 = (req, res) => {
             if(err){
                 res.json(err);
             }
-            res.render('consultas', {
+            res.render('consultasB', {
                 data: alumnos
             });
         });
@@ -131,7 +125,7 @@ controller.consulta3 = (req, res) => {
             if(err){
                 res.json(err);
             }
-            res.render('consultas', {
+            res.render('consultasC', {
                 data: alumnos
             });
         });
@@ -145,7 +139,7 @@ controller.consulta4 = (req, res) => {
             if(err){
                 res.json(err);
             }
-            res.render('consultas', {
+            res.render('consultasD', {
                 data: alumnos
             });
         });
@@ -159,7 +153,7 @@ controller.consulta5 = (req, res) => {
             if(err){
                 res.json(err);
             }
-            res.render('consultas', {
+            res.render('consultasE', {
                 data: alumnos
             });
         });
