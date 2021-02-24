@@ -149,7 +149,7 @@ controller.consulta4 = (req, res) => {
 controller.consulta5 = (req, res) => {
     req.getConnection((err,conn)=>{
         
-        conn.query("SELECT * FROM alumnos WHERE dom_alumno LIKE 'Av. J.B. Justo.%'", (err, alumnos) =>{
+        conn.query("SELECT * FROM alumnos WHERE dom_alumno LIKE 'Av. J.B. Justo'", (err, alumnos) =>{
             if(err){
                 res.json(err);
             }

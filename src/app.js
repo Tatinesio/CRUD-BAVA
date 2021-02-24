@@ -12,11 +12,11 @@ app.set('views', path.join(__dirname, 'views'));
 
 app.use(morgan('dev'));
 app.use(myConnection(mysql,{
-    host:'sql10.freemysqlhosting.net',
-    user:'sql10393243',
-    password:'NccINemshe',
+    host:'remotemysql.com',
+    user:'a7BzilyPvu',
+    password:'uerFygqwmg',
     port:3306,
-    database: 'sql10393243'
+    database: 'a7BzilyPvu'
 }, 'single'));
 app.use(express.urlencoded({extended:false}));
 app.use('/', alumnoRoutes);
